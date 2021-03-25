@@ -1,15 +1,14 @@
-import "./App.scss";
-
 import { Container } from 'react-bootstrap';
 import { Switch, Route } from 'react-router-dom';
 
+import './App.scss';
 import Nav from './Nav';
-import Feed from './Events/Feed';
-import NewEvent from './Events/New';
-import NewUser from './Users/New'
+import UsersList from './Users/List';
+import UsersNew from './Users/New';
+import PostsNew from './Posts/New';
+import Feed from './Feed';
 
 function App() {
-
   return (
     <Container>
       <Nav />
@@ -17,11 +16,14 @@ function App() {
         <Route path="/" exact>
           <Feed />
         </Route>
-        <Route path="/register" exact>
-          <NewUser />
+        <Route path="/posts/new" exact>
+          <PostsNew />
         </Route>
-        <Route path="/new" exact>
-          <NewEvent />
+        <Route path="/users" exact>
+          <UsersList />
+        </Route>
+        <Route path="/users/new" exact>
+          <UsersNew />
         </Route>
       </Switch>
     </Container>
